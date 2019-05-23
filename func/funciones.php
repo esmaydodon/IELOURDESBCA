@@ -1,0 +1,9 @@
+<?php
+//require_once("conexion.php");
+require_once("conexion.php");
+require_once("utilidades.php");
+require_once("bd.php");
+//require_once("datos.php");
+//require_once("fechas.php");
+//require_once("logeo.php");
+?>

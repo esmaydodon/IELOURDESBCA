@@ -1,0 +1,1 @@
+<?phpecho "<div style='float: left' id='menu'> <ul><a href='destruir.php' class='current'>SALIR</a>           <li><a href='personal_panel_administrador.php'>ALUMNOS</a></li>	  <li><a href='documentos_enlace.php'>DOCUMENTOS</a></li>	  <li><a href='citacion.php'>CITACIÓN</a></li>          <li><a href='destruir.php' class='current'>SALIR</a></li>    </ul>  </div>";?>
