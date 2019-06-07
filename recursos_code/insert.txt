@@ -1,0 +1,3 @@
+INSERT INTO `equipos_bd` (`idequipos_bd`, `equipos_codigo_bd`, `nombre_equipo_bd`, `marca_equipo_bd`, `modelo_equipo_bd`, `serie_equipo_bd`, `equipos_unidadm_bd`, `salida_para_equipo_bd`, `stock_minimo_equipo_bd`, `stock_actual_equipo_bd`) VALUES (NULL, '01', 'Computadora Portatil', 'Hp-compacto', '250g', 'cnd6031z9r', NULL, 'salida,prestamo,etc', '1', '1');
+
+INSERT INTO `prestamo_bd` (`idprestamo_bd`, `prestado_equipo_bd`, `detalle_prestamo_bd`, `hora_prestamo`, `iddistritos_ubigeo`, `fecha_prestamo_bd`, `registrado_por_bd_prestamo`, `idusuarios`, `idequipos_bd`) VALUES ('', '1', 'equipo 001', '21:49', '79', '2019-06-04', '45', '46', '1');

@@ -246,6 +246,23 @@ ajax=objetoAjax();
 	ajax.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
 	ajax.send("busqueda="+bus+"&dedo="+dedonde+"&idusuarioSistema="+idusuarioSistema)
  }
+    function buscarEquipo(){
+	resul = document.getElementById('resultadoBusquedaEquipo');
+	bus=document.frmbusquedaequipo.dato.value;
+	dedonde=document.frmbusquedaequipo.dedoc.value;
+	idusuarioSistema=document.frmbusquedaequipo.idusuarioPotencial.value;
+ajax=objetoAjax();
+	ajax.open("POST","BusquedaEquipo.php",true);
+	resul.innerHTML= '<img src="../imagenes/cargar.gif">'; 
+	ajax.onreadystatechange=function() {
+		if (ajax.readyState==4) {
+			resul.innerHTML = ajax.responseText
+		}
+	}
+//        alert("hola");
+	ajax.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+	ajax.send("busqueda="+bus+"&dedo="+dedonde+"&idusuarioSistema="+idusuarioSistema)
+ }
 //compras
 function compras(){
 	idCuenta = 1;
@@ -462,6 +479,19 @@ function listarDocumentos(){
 	ajax=objetoAjax();
       
 	ajax.open("POST","consultarDocumentos.php");
+	divContenido.innerHTML= '<img src="../imagenes/cargar.gif">'; 
+	ajax.onreadystatechange=function(){
+	if(ajax.readyState ==4){//alert(idCuenta); 
+	divContenido.innerHTML=ajax.responseText}}
+        ajax.setRequestHeader("Content-Type","application/x-www-form-urlencoded");		
+        ajax.send("id="+idCuenta)	//en realidad para na esto
+	}
+function listarEquiposPrestados(){
+	idCuenta = 1;
+	divContenido = document.getElementById('listarEquiposPrestados');
+	ajax=objetoAjax();
+      
+	ajax.open("POST","consultarEquiposPrestados.php");
 	divContenido.innerHTML= '<img src="../imagenes/cargar.gif">'; 
 	ajax.onreadystatechange=function(){
 	if(ajax.readyState ==4){//alert(idCuenta); 
@@ -828,16 +858,28 @@ function pedirDatosPersonalUtc(idUsuario){
 	ajax.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
 	ajax.send("id="+idUsuario);		
 	
-	}        
-function pedirDatosDocumentos(idUsuario){
-	divContenido = document.getElementById('editDocumentos');
-	ajax=objetoAjax();//chekar donde se mostrar�"""""""""""
+	}    
+              function pedirDatosDocumentos_func(idUsuario){
+	divContenido = document.getElementById('formulario_DocumentosEditar');
+	ajax=objetoAjax();//chekar donde se mostrar
+//        alert(idUsuario); 
 	ajax.open("POST","modificarDocumento.php");
 	ajax.onreadystatechange=function(){
 		if(ajax.readyState ==4){
 			divContenido.innerHTML=ajax.responseText}}
 	ajax.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
 	ajax.send("id="+idUsuario);		
+	
+	} 
+function CambiarEstadoAdevuelto(idequipo){
+	divContenido = document.getElementById('formulario_EquiposPrestar');
+	ajax=objetoAjax();//chekar donde se mostrar�"""""""""""
+	ajax.open("POST","modificarEstadoEquipo.php");
+	ajax.onreadystatechange=function(){
+		if(ajax.readyState ==4){
+			divContenido.innerHTML=ajax.responseText}}
+	ajax.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+	ajax.send("id="+idequipo);		
 /*	alert(idUsuario);*/
 	}	
 function pedirDatosProveedor(idUsuario){
@@ -1677,6 +1719,17 @@ function pedirDatosAlumnos_func(idUsuario){
 			divContenido.innerHTML=ajax.responseText}}
 	ajax.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
 	ajax.send("id="+idUsuario);		
+//	alert(idUsuario);
+	}
+function pedirDatosEquipo_func(idequipos_bd){
+	divContenido = document.getElementById('detalleEquipo');
+	ajax=objetoAjax();
+	ajax.open("POST","mostrarDatosEquipo.php");
+	ajax.onreadystatechange=function(){
+		if(ajax.readyState ==4){
+			divContenido.innerHTML=ajax.responseText}}
+	ajax.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+	ajax.send("id="+idequipos_bd);		
 //	alert(idUsuario);
 	}
 /* validacion de datos*/

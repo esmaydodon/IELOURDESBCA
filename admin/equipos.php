@@ -22,7 +22,7 @@ include 'login.php';
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
 <script type="text/javascript"> 
- $(document).ready(function(){
+ $(document).ready(function(){  
 $('#listar_personal').click(function(){
            $('#listarDocumentos').css("display", "block");
 	  $('#formulario_envioDJ').css('display', 'none');
@@ -102,54 +102,56 @@ $("#fecha_de_envio_documento_bd").datepicker({
   <div id="content">
     <div class="content_box_panel">
   
-<span id="listar_personal" class="button mediano azul" onclick="listarDocumentos()">LISTAR DOUMENTOS</span>
+<span id="listar_personal" class="button mediano azul" onclick="listarEquiposPrestados()">LISTAR EQUIPOS PRESTADOS</span>
+<!--<span id="listar_personal" class="button mediano azul" onclick="listarDocumentos()">LISTAR DOUMENTOS</span>-->
  <!--<span id="buscar_potencial_div" class="button mediano azul" onclick="">REGISTRAR PERSONA</span>-->
 <!--formulario para editar--> 
        
-<div id="formulario_DocumentosEditar"></div> 
+<div id="formulario_EquiposPrestar"></div> 
  <div id="formularioBuscadorPotencial"  >
-    <form name="frmbusqueda2" onkeypress="buscarAlumnos();" class="contacto">
+<!--    <form name="frmbusqueda2" onkeypress="buscarAlumnos();" class="contacto">
 <input value="1" name="dedoc" type="hidden"/>
 <input value="<?php echo $idUsuarioL;?>" name="idusuarioPotencial" type="hidden"/>
-<!--emviar tambien el id de docuimento para ppsar el id por el link editar-->
-Buscar Potencial Usuario:
+emviar tambien el id de docuimento para ppsar el id por el link editar
+Buscar Alumno:
   <input name="dato" id="dato" type="text"/>
   <fieldset>
  <div id="resultadoBusqueda"></div>
   </fieldset>
+  </form>-->
+    </div> 
+ <div id="formularioBuscadorEquipo"  >
+    <form name="frmbusquedaequipo" onkeypress="buscarEquipo();" class="contacto">
+<input value="1" name="dedoc" type="hidden"/>
+<input value="<?php echo $idUsuarioL;?>" name="idusuarioPotencial" type="hidden"/>
+<!--emviar tambien el id de docuimento para ppsar el id por el link editar-->
+Buscar Equipo / Producto:
+  <input name="dato" id="dato" type="text"/>
+  <fieldset>
+ <div id="resultadoBusquedaEquipo"></div>
+  </fieldset>
   </form>
     </div> 
-<div id="listarDocumentos" class="listarDocumentos"></div>
+<div id="listarEquiposPrestados" class="listarDocumentos"></div>
 <div id="formulario_envioDJ">
-    <form action="registrando_cita.php" name="form_personal_utc" method="post" class="contacto" enctype="multipart/form-data" >
+    <form action="registrando_prestamo_equipo.php" name="form_personal_utc" method="post" class="contacto" enctype="multipart/form-data" >
         <input value="<?Php echo $idUsuarioL;?>" name="idusuarioPotencial" type="hidden"/>
             <table border="0">
                 <tr>
                     <td>
-                        ALUMNO:
+                        EQUIPO:
                     </td>
                     <td>
-                        <div id="detalleAlumno">detalle </div> 
+                        <!--<div id="detalleAlumno">detalle Alumno </div>--> 
+                        <div id="detalleEquipo">Detalle Equipo </div> 
                     </td>
                 </tr>
                 <tr>
                     <!--tomar encuenta que estoy poniendo ID=12 para documento id =12-->
-                <td>DOCUMENTO:</td>
-                <td><?PHP $consulata_documento=dime("select d.id,d.nombreDocumento_bd,ds.*,s.* FROM documentos_bd as d "
-                        . "INNER JOIN documento_servicio as ds ON"
-                        . " d.id=ds.documento_bd_id INNER JOIN servicio as s ON "
-                        . "ds.idservicio=s.idservicio where d.id=13 ");
-    echo"<select id ='documento' name='documento' class='select' >";
-		while($tipoProg=mysql_fetch_array($consulata_documento)){
-                 $iddocumento= $tipoProg['id'];
-                echo"<option  value='".$tipoProg['iddocumento_servicio'] ."'>".$tipoProg['nombreDocumento_bd']."</option>";
-                $numeroactual=$tipoProg['numero_actual'];
-               
-                }
-	echo"</select>  <input type='hidden' name='iddocumento' value='$iddocumento'/>";?></td>
+              
                 <td>
                 <?php
-                    echo "N°:". $numeroactual."   FECHA:".date("Y-m-d H:i:s");
+//                    echo "N°:". $numeroactual."   FECHA:".date("Y-m-d H:i:s");
                     
                 ?>
                     </td>
@@ -165,17 +167,17 @@ from usuarios where tipos_usuarios_idtipos_usuarios=10");
 	echo"</select>";?> </td>
               </tr> 
 	       <tr>
-                <td>FECHA CITA:</td>
-                <td><input name="fecha_registro_citacion_bd" type="text" id="fecha_de_envio_documento_bd" size="15" /></td>
+                <td>FECHA PRESTAMO:</td>
+                <td><input name="fecha_prestamo_bd" type="text" id="fecha_de_envio_documento_bd" size="15" value="<?php echo date("Y-m-d");?>" /></td>
               </tr> 
 	       <tr>
-                <td>HORA CITA:</td>
-                <td><input name="hora" type="text" id="hora" size="15" /></td>
+                <td>HORA PRESTAMO:</td>
+                <td><input name="hora_prestamo" value="<?php echo date("H:i:s");?>"type="text" id="hora_prestamo" size="15" /></td>
               </tr> 
                 <tr>
-                    <td>CON LA FINALIDAD DE:</td>
+                    <td>DESCRIPCIÓN:</td>
                     <td> 
-                        <textarea name="detalleDocumento_bd" id="detalleDocumento_bd" rows="10" cols="60"></textarea>
+                        <textarea name="detallePrestamo_bd" id="detallePrestamo_bd" rows="10" cols="60"></textarea>
                     </td>
                 </tr>
               <tr>
@@ -202,20 +204,13 @@ u.idusuarios =udu.idusuarios
 	echo"</select></br>";
         ?></td>
               </tr>
- 
-<!--            <tr>
-                <td>FECHA DE NACIMIENTO:</td>
-                <td><input name="fecha_nacimiento_usuario_p65_col" type="text" id="fecha_nacimiento_usuario_p65_col" size="50" value="yyyy-mm-dd" /></td>
-				
-              </tr>-->
-             
-              <tr>
+  <tr>
                 <td><input type="submit" value="REGISTRAR" class="button mediano azul"></td>
                 <!--    <span  id="listar_personal" onclick="listarFormatos()">LISTAR FORMATOS</span>-->
               </tr>
             </table>
             <input type="hidden" name="phpmailer" />
-            <input type="hidden" name="estado_documento_bd" value="1" />
+            <input type="hidden" name="prestado_equipo_bd" value="1" />
             <!--<input type="hidden" name="idUsuario_p65" value="<?php echo $idUsuarioL?>" />-->
             <input type="hidden" name="fecha_de_digitacion" value="<?php echo date("Y-m-d H:i:s");?>" />
           </form>

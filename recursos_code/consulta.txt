@@ -1,0 +1,1 @@
+SELECT prestamo_bd.*,equipos_bd.* FROM prestamo_bd  INNER JOIN equipos_bd ON prestamo_bd.idequipos_bd = equipos_bd.idequipos_bd

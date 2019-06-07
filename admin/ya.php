@@ -1,9 +1,7 @@
 <?php 
 include("../func/funciones.php");
 //include('login.php');
-if($adminCorrecto and $loginCorrecto) { 
-echo $NombreUsuarioL; 
-}elseif($loginCorrecto) 
+if($loginCorrecto) 
 	{
     echo $NombreUsuarioL; 
        }

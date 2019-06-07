@@ -38,7 +38,7 @@ $("#pedir").click(function(evento){//para trabajar con link de editar de registr
   <div id="header">
     <div id="site_title">
       <h1>
-        <?php include ('ya.php'); ?>
+        <?php //include ('ya.php'); ?>
       </h1>
     </div>
    <strong class="MANTRA"> </strong>

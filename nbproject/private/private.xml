@@ -12,46 +12,23 @@
     </editor-bookmarks>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/AppServ/www/indra/ielourdes/admin/mostrarDatosAlumno.php</file>
-            <file>file:/C:/AppServ/www/indra/ielourdes/admin/personal_panel_secretaria.php</file>
-            <file>file:/C:/AppServ/www/indra/ielourdes/admin/ya.php</file>
-            <file>file:/C:/AppServ/www/indra/ielourdes/admin/BusquedaPotencialUsuario.php</file>
-            <file>file:/C:/AppServ/www/indra/ielourdes/admin/destruir.php</file>
-            <file>file:/C:/AppServ/www/indra/ielourdes/admin/fichaentrevista.php</file>
-            <file>file:/C:/AppServ/www/indra/ielourdes/admin/BusquedaAlumno.php</file>
-            <file>file:/C:/AppServ/www/indra/ielourdes/admin/personal_panel_administrador.php</file>
-            <file>file:/C:/AppServ/www/indra/ielourdes/admin/BusquedaDocumentos.php</file>
-            <file>file:/C:/AppServ/www/indra/ielourdes/admin/consultarAlumno.php</file>
-            <file>file:/C:/AppServ/www/indra/ielourdes/admin/registrando_cita.php</file>
-            <file>file:/C:/AppServ/www/indra/ielourdes/admin/do_login.php</file>
-            <file>file:/C:/AppServ/www/indra/ielourdes/admin/consultarDocumentos.php</file>
-            <file>file:/C:/AppServ/www/indra/ielourdes/index.php</file>
-            <file>file:/C:/AppServ/www/indra/ielourdes/admin/consultadatosdocumento.php</file>
-            <file>file:/C:/AppServ/www/indra/ielourdes/admin/consultarPersonalUtc.php</file>
-            <file>file:/C:/AppServ/www/indra/ielourdes/admin/registrando_documento.php</file>
-            <file>file:/C:/AppServ/www/indra/ielourdes/admin/equipos.php</file>
-            <file>file:/C:/AppServ/www/indra/ielourdes/admin/includes/menu_administrador.php</file>
-            <file>file:/C:/AppServ/www/indra/ielourdes/admin/UpdateDocumento.php</file>
-            <file>file:/C:/AppServ/www/indra/ielourdes/admin/destruir2.php</file>
-            <file>file:/C:/AppServ/www/indra/ielourdes/inalumno.php</file>
-            <file>file:/C:/AppServ/www/indra/ielourdes/admin/validar.php</file>
-            <file>file:/C:/AppServ/www/indra/ielourdes/admin/documentos_enlace.php</file>
-            <file>file:/C:/AppServ/www/indra/ielourdes/func/funciones.php</file>
-            <file>file:/C:/AppServ/www/indra/ielourdes/admin/includes/menu_3.php</file>
-            <file>file:/C:/AppServ/www/indra/ielourdes/admin/panelAlumno.php</file>
-            <file>file:/C:/AppServ/www/indra/ielourdes/func/conexion.php</file>
-            <file>file:/C:/AppServ/www/indra/ielourdes/admin/votaciones.php</file>
-            <file>file:/C:/AppServ/www/indra/ielourdes/admin/includes/menu_secre_ie_lourdes.php</file>
-            <file>file:/C:/AppServ/www/indra/ielourdes/admin/registrando_voto_alumno.php</file>
-            <file>file:/C:/AppServ/www/indra/ielourdes/admin/borracarDistrito.php</file>
-            <file>file:/C:/AppServ/www/indra/ielourdes/admin/includes/menu_auxiliar.php</file>
-            <file>file:/C:/AppServ/www/indra/ielourdes/admin/registrando_Alumno.php</file>
-            <file>file:/C:/AppServ/www/indra/ielourdes/admin/login.php</file>
-            <file>file:/C:/AppServ/www/indra/ielourdes/admin/modificarPotencial.php</file>
-            <file>file:/C:/AppServ/www/indra/ielourdes/style.css</file>
-            <file>file:/C:/AppServ/www/indra/ielourdes/admin/consultarPotencialUsuario.php</file>
-            <file>file:/C:/AppServ/www/indra/ielourdes/admin/personal_panel_auxiliar.php</file>
-            <file>file:/C:/AppServ/www/indra/ielourdes/admin/citacion.php</file>
+            <file>file:/C:/AppServ/www/IELOURDESBCA/admin/UpdateDocumento.php</file>
+            <file>file:/C:/AppServ/www/IELOURDESBCA/index.php</file>
+            <file>file:/C:/AppServ/www/IELOURDESBCA/admin/personal.php</file>
+            <file>file:/C:/AppServ/www/IELOURDESBCA/admin/modificarEstadoEquipo.php</file>
+            <file>file:/C:/AppServ/www/IELOURDESBCA/admin/login.php</file>
+            <file>file:/C:/AppServ/www/IELOURDESBCA/admin/BusquedaEquipo.php</file>
+            <file>file:/C:/AppServ/www/IELOURDESBCA/admin/panel.php</file>
+            <file>file:/C:/AppServ/www/IELOURDESBCA/admin/consultarEquiposPrestados.php</file>
+            <file>file:/C:/AppServ/www/IELOURDESBCA/admin/equipos.php</file>
+            <file>file:/C:/AppServ/www/IELOURDESBCA/admin/registrando_prestamo_equipo.php</file>
+            <file>file:/C:/AppServ/www/IELOURDESBCA/admin/modificarDocumento.php</file>
+            <file>file:/C:/AppServ/www/IELOURDESBCA/admin/UpdatePrestamoEquipo.php</file>
+            <file>file:/C:/AppServ/www/IELOURDESBCA/admin/AsignarUsuarioUbigeo.php</file>
+            <file>file:/C:/AppServ/www/IELOURDESBCA/admin/mostrarDatosEquipo.php</file>
+            <file>file:/C:/AppServ/www/IELOURDESBCA/admin/ya.php</file>
+            <file>file:/C:/AppServ/www/IELOURDESBCA/admin/ubigeo.php</file>
+            <file>file:/C:/AppServ/www/IELOURDESBCA/admin/validar.php</file>
         </group>
     </open-files>
 </project-private>
